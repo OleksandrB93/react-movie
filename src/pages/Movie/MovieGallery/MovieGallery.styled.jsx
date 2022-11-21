@@ -36,11 +36,11 @@ export const MovieItem = styled.li`
 `;
 
 export const MovieImg = styled.img`
-  max-width: 250px;
-  max-height: 375px;
+  width: 250px;
+  height: 375px;
 
   border-radius: 5px;
-  object-fit: contain;
+  object-fit: cover;
 `;
 
 export const MovieTitle = styled.p`
@@ -63,3 +63,4 @@ export const MovieTitle = styled.p`
   color: black;
   background-color: #14c6b4a8;
 `;
+

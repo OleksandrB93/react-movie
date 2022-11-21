@@ -1,5 +1,5 @@
-import React from "react";
-import { URL_POSTER } from "constants/constants";
+import React from 'react';
+import { URL_POSTER } from 'constants/constants';
 import {
   MovieInfoBox,
   Poster,
@@ -9,7 +9,10 @@ import {
   OverviewContent,
   GenresTitle,
   GenresContent,
-} from "./MovieInfo.styled";
+  PlayBtnContainer,
+  PosterandBtnContainer,
+} from './MovieInfo.styled';
+import Trailer from 'components/Trailer/Trailer';
 
 export default function MovieInfo({ info }) {
   const {
@@ -26,22 +29,27 @@ export default function MovieInfo({ info }) {
 
   return (
     <MovieInfoBox backdrop={info}>
-      <Poster
-        src={poster_path ? `${URL_POSTER}${poster_path}` : "no image"}
-        alt={original_title}
-        width="300"
-        height="450"
-      />
+      <PosterandBtnContainer>
+        <Poster
+          src={poster_path ? `${URL_POSTER}${poster_path}` : 'no image'}
+          alt={original_title}
+          width="300"
+          height="450"
+        />
+        <PlayBtnContainer>
+          <Trailer />
+        </PlayBtnContainer>
+      </PosterandBtnContainer>
       <div>
         <Title>
           {original_title} ({getYear()})
         </Title>
         <Score>Use Score : {getScore()}%</Score>
-        <OverviewTitle>Overview</OverviewTitle>
+        <OverviewTitle>Overview:</OverviewTitle>
         <OverviewContent>{overview}</OverviewContent>
-        <GenresTitle>Genres</GenresTitle>
+        <GenresTitle>Genres:</GenresTitle>
         <GenresContent>
-          {genres.map((genre) => genre.name).join(", ")}
+          {genres.map(genre => genre.name).join(', ')}
         </GenresContent>
       </div>
     </MovieInfoBox>

@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { URL_BACKDROP } from "constants/constants";
+import styled from '@emotion/styled';
+import { URL_BACKDROP } from 'constants/constants';
 
 export const MovieInfoBox = styled.div`
   width: 100%;
@@ -12,7 +12,7 @@ export const MovieInfoBox = styled.div`
       rgba(58, 58, 58, 0.5),
       rgba(47, 48, 58, 0.5)
     ),
-    ${(props) => `url(${URL_BACKDROP}${props.backdrop.backdrop_path})`};
+    ${props => `url(${URL_BACKDROP}${props.backdrop.backdrop_path})`};
 
   background-size: cover;
   background-position: top;
@@ -24,7 +24,6 @@ export const MovieInfoBox = styled.div`
 export const Poster = styled.img`
   border-radius: 5px;
   margin-bottom: 20px;
-  margin-left: 40px;
   box-shadow: rgba(0, 0, 0, 0.72) 0px 5px 15px;
 `;
 
@@ -41,12 +40,13 @@ export const Title = styled.p`
 `;
 
 export const Score = styled.p`
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 20px;
-  padding:5px 20px;
+  padding: 5px 20px;
+  padding-bottom: 10px;
 
   backdrop-filter: invert(20%);
   color: #e3c373;
@@ -55,6 +55,8 @@ export const Score = styled.p`
 export const OverviewTitle = styled.p`
   font-size: 25px;
   font-weight: 700;
+  text-decoration-line: underline;
+
   margin-left: 20px;
   margin-right: 20px;
   padding-left: 20px;
@@ -64,7 +66,9 @@ export const OverviewTitle = styled.p`
 `;
 
 export const OverviewContent = styled.p`
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 700;
+
   margin-left: 20px;
   margin-right: 20px;
   padding-left: 20px;
@@ -77,6 +81,8 @@ export const OverviewContent = styled.p`
 export const GenresTitle = styled.p`
   font-size: 25px;
   font-weight: 700;
+  text-decoration-line: underline;
+
   margin-left: 20px;
   margin-right: 20px;
   padding-left: 20px;
@@ -86,11 +92,26 @@ export const GenresTitle = styled.p`
 `;
 
 export const GenresContent = styled.p`
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 700;
+
   margin-left: 20px;
   margin-right: 20px;
   padding-left: 20px;
   padding-right: 20px;
   backdrop-filter: invert(20%);
   color: ${({ theme }) => theme.colors.bgPrimary};
+`;
+
+export const PosterandBtnContainer = styled.div`
+  position: relative;
+  margin-left: 40px;
+  width: 300px;
+`;
+
+export const PlayBtnContainer = styled.div`
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%);
 `;
