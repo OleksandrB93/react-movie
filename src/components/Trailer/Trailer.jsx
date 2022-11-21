@@ -41,6 +41,7 @@ export default function Trailer() {
             height="480"
             frameBorder="0"
             allowFullScreen
+            title="myFrame"
           ></iframe>
         </Modal>
       )}
