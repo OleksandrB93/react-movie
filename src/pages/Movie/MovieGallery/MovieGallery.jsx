@@ -37,3 +37,5 @@ export default function MovieGallery({ movies, isLoading }) {
     </MovieList>
   );
 }
+
+
