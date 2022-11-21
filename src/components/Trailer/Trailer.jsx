@@ -19,7 +19,7 @@ export default function Trailer() {
         const idResp = await getMovieTrailer(movieId);
         idResp.map(obj => {
           if (obj.name.includes('Official')) {
-            setTrailer(obj.key);
+            return setTrailer(obj.key);
           }
         });
       } catch (error) {
