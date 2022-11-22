@@ -9,7 +9,7 @@ export const Slide = styled(NavLink)`
   margin: 0 10px;
   border-radius: 5px;
   width: 100%;
-  height: auto;
+  height: 100%;
 
   :hover p {
     opacity: 1;
@@ -25,6 +25,7 @@ export const SlideImg = styled.img`
   position: relative;
   width: 100%;
   height: auto;
+  object-fit: cover;
   border-radius: 5px;
   box-shadow: rgba(255, 255, 255, 0.07) 0px 1px 2px,
     rgba(255, 255, 255, 0.07) 0px 2px 4px, rgba(255, 255, 255, 0.07) 0px 4px 8px,

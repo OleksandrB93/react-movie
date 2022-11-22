@@ -121,7 +121,8 @@ export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: invert(95%);
+  background-color: #ffffff3e;
+  backdrop-filter: blur(5px);
 `;
 export const LogoItem = styled.div`
   height: auto;
