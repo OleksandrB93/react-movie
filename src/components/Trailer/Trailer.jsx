@@ -5,8 +5,8 @@ import Modal from 'components/Modal/Modal';
 import PlayBtnTrailer from 'components/Modal/PlayBtn/PlayBtn';
 
 export default function Trailer() {
-  const [trailer, setTrailer] = useState('');
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [trailer, setTrailer] = useState('');
   const { movieId } = useParams();
 
   const toggleModal = () => {

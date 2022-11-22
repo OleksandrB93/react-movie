@@ -1,5 +1,7 @@
 import React from 'react';
-import { URL_POSTER } from 'constants/constants';
+import { URL_POSTER, LOGO_URL } from 'constants/constants';
+import Trailer from 'components/Trailer/Trailer';
+import { GiFilmSpool } from 'react-icons/gi';
 import {
   MovieInfoBox,
   Poster,
@@ -11,8 +13,9 @@ import {
   GenresContent,
   PlayBtnContainer,
   PosterandBtnContainer,
+  LogoContainer,
+  LogoItem,
 } from './MovieInfo.styled';
-import Trailer from 'components/Trailer/Trailer';
 
 export default function MovieInfo({ info }) {
   const {
@@ -22,6 +25,7 @@ export default function MovieInfo({ info }) {
     vote_average,
     overview,
     genres,
+    production_companies,
   } = info;
 
   const getYear = () => new Date(`${release_date}`).getFullYear();
@@ -39,6 +43,17 @@ export default function MovieInfo({ info }) {
         <PlayBtnContainer>
           <Trailer />
         </PlayBtnContainer>
+        <LogoContainer>
+          {production_companies.map(({ logo_path, id }) => (
+            <LogoItem key={id}>
+              {logo_path ? (
+                <img src={`${LOGO_URL}${logo_path}`} alt="logo" />
+              ) : (
+                <GiFilmSpool size={65} />
+              )}
+            </LogoItem>
+          ))}
+        </LogoContainer>
       </PosterandBtnContainer>
       <div>
         <Title>
@@ -55,5 +70,3 @@ export default function MovieInfo({ info }) {
     </MovieInfoBox>
   );
 }
-
-

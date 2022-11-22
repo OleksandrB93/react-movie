@@ -35,3 +35,8 @@ export const getMovieTrailer = async movieId => {
   const response = await axios.get(`/movie/${movieId}/videos`);
   return response.data.results;
 };
+
+export const getMovieCompanyLogo = async company_id => {
+  const response = await axios.get(`/company/${company_id}/images`);
+  return response.data.results;
+};

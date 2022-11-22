@@ -115,3 +115,17 @@ export const PlayBtnContainer = styled.div`
   left: 50%;
   transform: translate(-50%);
 `;
+
+export const LogoContainer = styled.div`
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: invert(95%);
+`;
+export const LogoItem = styled.div`
+  height: auto;
+  padding: 0 5px;
+  display: flex;
+  justify-content: center;
+`;
