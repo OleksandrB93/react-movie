@@ -17,7 +17,7 @@ export default function Trailer() {
     async function getMovieId() {
       try {
         const idResp = await getMovieTrailer(movieId);
-        idResp.map(obj => {
+        idResp.forEach((obj) => {
           if (obj.name.includes('Official')) {
             return setTrailer(obj.key);
           }
