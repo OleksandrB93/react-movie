@@ -17,9 +17,9 @@ export default function Trailer() {
     async function getMovieId() {
       try {
         const idResp = await getMovieTrailer(movieId);
-        idResp.forEach((obj) => {
-          if (obj.name.includes('Official')) {
-            return setTrailer(obj.key);
+        idResp.forEach(({name,key}) => {
+          if (name.includes('Official')) {
+            return setTrailer(key);
           }
         });
       } catch (error) {
@@ -37,8 +37,8 @@ export default function Trailer() {
         <Modal closeModal={toggleModal}>
           <iframe
             src={`https://www.youtube-nocookie.com/embed/${trailer}`}
-            width="640"
-            height="480"
+            width="700"
+            height="400"
             frameBorder="0"
             allowFullScreen
             title="myFrame"
