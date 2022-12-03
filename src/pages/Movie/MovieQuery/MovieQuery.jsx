@@ -8,6 +8,7 @@ import {
   Form,
   BtnContainer,
   SkeltonBox,
+  BackgroundImgNoMovie,
 } from "./MovieQuery.styled";
 import MovieGallery from "../MovieGallery/MovieGallery";
 import SkeletonHome from "components/Skeleton/Skeleton";
@@ -15,7 +16,7 @@ import NoMovie from "./NoMovie/NoMovie";
 
 export default function Movie() {
   const [query, setQuery] = useState("");
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState(0);
   const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -30,6 +31,7 @@ export default function Movie() {
     setSearchParams({ query: query });
     setQuery("");
   };
+
 
   useEffect(() => {
     if (!movieSearch) return;
@@ -49,7 +51,7 @@ export default function Movie() {
   }, [movieSearch]);
 
   return (
-    <div>
+    <BackgroundImgNoMovie movies={movies}>
       <Form action="" onSubmit={onFormSubmit}>
         <label htmlFor="">
           <Input type="text" name="query" value={query} onChange={handleChange} />
@@ -70,8 +72,9 @@ export default function Movie() {
       ) : (
         movies && <MovieGallery movies={movies} />
       )}
-      { movies.length > 0 && <NoMovie />}
-    </div>
+
+      {movies.length === 0 && <NoMovie />}
+    </BackgroundImgNoMovie>
   );
 }
 

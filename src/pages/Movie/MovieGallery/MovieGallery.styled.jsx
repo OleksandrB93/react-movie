@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 
 export const MovieList = styled.ul`
   margin-top: 20px;
-
   display: flex;
   justify-content: center;
   align-content: start;

@@ -1,6 +1,8 @@
 import React from "react";
-import { NoMovieContnet } from "./NoMovie.styled";
+import { NoMovieContnet, } from "./NoMovie.styled";
 
 export default function NoMovie() {
-  return <NoMovieContnet>There is no movies with that reques</NoMovieContnet>;
+  return <div>
+    <NoMovieContnet>There is no movies with that request...</NoMovieContnet>
+  </div>;
 }

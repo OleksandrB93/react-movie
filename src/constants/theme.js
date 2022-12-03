@@ -19,44 +19,7 @@ export const theme = Object.freeze({
   transition: {
     tr: "transform 100ms ease-in-out",
   },
+  backgroundImg:
+    `https://ktla.com/wp-content/uploads/sites/4/2022/09/movie-theater-popcorn.jpg?w=876&h=493&crop=1`
+  
 });
-
-//!styled info  https://emotion.sh/docs/theming
-// import { ThemeProvider } from '@emotion/react'
-// import styled from '@emotion/styled'
-
-// const theme = {
-//   colors: {
-//     primary: 'hotpink'
-//   }
-// }
-
-// const SomeText = styled.div`
-//   color: ${props => props.theme.colors.primary};
-// `
-
-// render(
-//   <ThemeProvider theme={theme}>
-//     <SomeText>some text</SomeText>
-//   </ThemeProvider>
-// )
-
-// //!useTheme hook
-// import { ThemeProvider, useTheme } from '@emotion/react'
-
-// const theme = {
-//   colors: {
-//     primary: 'hotpink'
-//   }
-// }
-
-// function SomeText(props) {
-//   const theme = useTheme()
-//   return <div css={{ color: theme.colors.primary }} {...props} />
-// }
-
-// render(
-//   <ThemeProvider theme={theme}>
-//     <SomeText>some text</SomeText>
-//   </ThemeProvider>
-// )

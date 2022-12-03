@@ -52,3 +52,17 @@ export const SkeltonBox = styled.div`
   align-content: start;
   flex-wrap: wrap;
 `;
+
+export const BackgroundImgNoMovie = styled.div`
+  background-image:radial-gradient(circle, rgba(0,0,0,0) 0%, #351a00cc 100%),
+  url('https://ktla.com/wp-content/uploads/sites/4/2022/09/movie-theater-popcorn.jpg?w=876&h=493&crop=1');
+  width: 100%;
+  height:  ${props => props.movies.length ? ('100%') : ('100vh')};
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+
+`
+
