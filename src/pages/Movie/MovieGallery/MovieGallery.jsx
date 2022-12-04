@@ -17,23 +17,22 @@ export default function MovieGallery({ movies, isLoading }) {
       {isLoading
         ? [...new Array(20)].map((_, index) => <SkeletonHome key={index} />)
         : movies.map(({ id, original_title, poster_path, title }) => (
-            <MovieItem key={id}>
-              <NavLink to={`/movies/${id}`} state={{ from: location }}>
-                  <MovieImg
-                    src={
-                      poster_path ? `${URL_POSTER}${poster_path}` : `no image`
-                    }
-                    alt={title}
-                    width={350}
-                    height={525}
-                  />
-
-                <div>
-                  <MovieTitle>{original_title}</MovieTitle>
-                </div>
-              </NavLink>
-            </MovieItem>
-          ))}
+          <MovieItem key={id}>
+            <NavLink to={`/movies/${id}`} state={{ from: location }}>
+              <MovieImg
+                src={
+                  poster_path ? `${URL_POSTER}${poster_path}` : `no image`
+                }
+                alt={title}
+                width={350}
+                height={525}
+              />
+              <div>
+                <MovieTitle>{original_title}</MovieTitle>
+              </div>
+            </NavLink>
+          </MovieItem>
+        ))}
     </MovieList>
   );
 }

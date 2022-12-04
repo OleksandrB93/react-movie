@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-
 export const Form = styled.form`
   display: flex;
   justify-content: center;
@@ -54,11 +53,10 @@ export const SkeltonBox = styled.div`
 `;
 
 export const BackgroundImgNoMovie = styled.div`
-  background-image:radial-gradient(circle, rgba(0,0,0,0) 0%, #351a00cc 100%),
-  url('https://ktla.com/wp-content/uploads/sites/4/2022/09/movie-theater-popcorn.jpg?w=876&h=493&crop=1');
+  background-image:radial-gradient(circle, rgba(0,0,0,0) 0%, #003335cc 100%),
+  url(${props => props.movies.length === 0 ? ('https://www.pixelstalk.net/wp-content/uploads/images5/Cool-Batman-Wallpaper-Free-Download.jpg') : ('')});
   width: 100%;
   height:  ${props => props.movies.length ? ('100%') : ('100vh')};
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -66,3 +64,4 @@ export const BackgroundImgNoMovie = styled.div`
 
 `
 
+// 

@@ -4,7 +4,7 @@ export const NoMovieContnet = styled.p`
   position: absolute;
   top:50%;
   left:50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
   z-index: 10;
 
   text-align: center;
@@ -15,6 +15,6 @@ export const NoMovieContnet = styled.p`
 
   padding: 7px 15px;
   border-radius: 15px;
-  text-shadow: 2px 2px 3px #000000;
+  text-shadow: 2px 2px 3px #9a7600;
 `;
 

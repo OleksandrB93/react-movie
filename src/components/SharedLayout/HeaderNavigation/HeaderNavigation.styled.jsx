@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export const Nav = styled.nav`
   position: fixed;
-  z-index: 10;
+  z-index: 1000;
   width: 100%;
 
   display: flex;
@@ -13,9 +13,8 @@ export const Nav = styled.nav`
 
   font-size: 25px;
   font-weight: 700;
-
   backdrop-filter: blur(3px);
-  background-color: #0000005d;
+  background-color: #0148583a;
   color: ${({ theme }) => theme.colors.clPrimary};
 `;
 
