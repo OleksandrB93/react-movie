@@ -35,3 +35,8 @@ img {
 .skeletonSlide {
   margin: 4px;
 }
+
+/* .swiper-slide:hover + .swiper-slide{
+transform: scale(1.1);
+} */
+

@@ -1,8 +1,10 @@
-import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
+import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const Nav = styled.nav`
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 1000;
   width: 100%;
 
@@ -16,6 +18,8 @@ export const Nav = styled.nav`
   backdrop-filter: blur(3px);
   background-color: #0148583a;
   color: ${({ theme }) => theme.colors.clPrimary};
+  transition: height 300ms ease-in-out;
+  height: ${props => (props.navBar ? '50px' : '70px')};
 `;
 
 export const HomeMovieBox = styled.div`
@@ -56,14 +60,14 @@ export const PageLink = styled(NavLink)`
   text-decoration: none;
   font-size: 20px;
   font-weight: 700;
-  padding: 18px 18px;
+  padding: ${props => (props.navBar ? '10px 18px' : '18px 18px')};
   margin-right: 20px;
 
   /* border: 1px solid black; */
   border-radius: 15px;
   color: inherit;
   background-color: #0000006a;
-  transition: ${({ theme }) => theme.transition.tr};
+  transition: ${({ theme }) => theme.transition.tr}, padding 300ms ease-in-out;
 
   &.active {
     color: ${({ theme }) => theme.colors.clAccent};

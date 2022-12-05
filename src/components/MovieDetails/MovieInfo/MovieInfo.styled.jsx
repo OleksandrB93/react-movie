@@ -120,13 +120,14 @@ export const LogoContainer = styled.div`
   margin-bottom: 20px;
   display: flex;
   align-items: center;
+  align-content: center;
   justify-content: center;
   background-color: #ffffff3e;
   backdrop-filter: blur(5px);
 `;
 export const LogoItem = styled.div`
   height: auto;
-  padding: 0 5px;
+  padding: 5px 5px;
   display: flex;
   justify-content: center;
 `;

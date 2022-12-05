@@ -1,8 +1,10 @@
-import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
+import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const SwiperContainer = styled.div`
-  padding-top: 100px;
+  margin-top: 100px;
+  box-shadow: 0 0px 50px 10px #14c6b3;
+  background-color: #013d37a2;
 `;
 
 export const Slide = styled(NavLink)`
@@ -28,9 +30,9 @@ export const SlideImg = styled.img`
   object-fit: cover;
   border-radius: 5px;
   box-shadow: rgba(255, 255, 255, 0.07) 0px 1px 2px,
-    rgba(255, 255, 255, 0.07) 0px 2px 4px, rgba(255, 255, 255, 0.07) 0px 4px 8px,
-    rgba(255, 255, 255, 0.07) 0px 8px 16px, rgba(0, 247, 255, 0.4) 0px 5px 10px,
-    rgba(255, 255, 255, 0.07) 0px 15px 30px;
+    rgba(255, 255, 255, 0.07) 0px 2px 4px, rgba(255, 255, 255, 0.07) 0px 4px 5px,
+    rgba(255, 255, 255, 0.07) 0px 8px 5px, rgba(0, 247, 255, 0.4) 0px 5px 5px,
+    rgba(255, 255, 255, 0.07) 0px 15px 5px;
 
   :hover {
     transform: translateY(-3px) scale(1.02);
@@ -38,7 +40,7 @@ export const SlideImg = styled.img`
       rgba(255, 255, 255, 0.07) 0px 2px 4px,
       rgba(255, 255, 255, 0.07) 0px 4px 8px,
       rgba(255, 255, 255, 0.07) 0px 8px 16px,
-      rgba(0, 247, 255, 0.867) 0px 0px 15px,
+      rgba(0, 247, 255, 0.867) 0px 0px 115px,
       rgba(255, 255, 255, 0.07) 0px 15px 30px;
   }
 `;
