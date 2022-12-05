@@ -10,14 +10,14 @@ import { useState } from 'react';
 export const HeaderNavigation = () => {
   const [navBar, setNavBar] = useState(false);
 
-  const changeNavbar=()=>{
-  if (window.scrollY>=100) {
+  const changeNavbar = () => {
+    if (window.scrollY >= 100) {
       setNavBar(true);
-  } else {
-    setNavBar(false);
-  }
-  }
-  window.addEventListener('scroll', changeNavbar)
+    } else {
+      setNavBar(false);
+    }
+  };
+  window.addEventListener('scroll', changeNavbar);
   return (
     <Nav navBar={navBar}>
       <LogoLink to="/">
@@ -25,8 +25,12 @@ export const HeaderNavigation = () => {
         <p>Moviestate</p>
       </LogoLink>
       <HomeMovieBox>
-        <PageLink navBar={navBar} to="/">Home</PageLink>
-        <PageLink navBar={navBar} to="/movies">Movies</PageLink>
+        <PageLink navBar={navBar} to="/">
+          Home
+        </PageLink>
+        <PageLink navBar={navBar} to="/movies">
+          Movies
+        </PageLink>
       </HomeMovieBox>
     </Nav>
   );

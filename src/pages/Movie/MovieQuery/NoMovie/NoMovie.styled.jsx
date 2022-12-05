@@ -10,11 +10,11 @@ export const NoMovieContnet = styled.p`
   text-align: center;
   font-weight: bold;
   font-size: 35px;
-  color: ${({ theme }) => theme.colors.clAccent};
+  color: #142928;
   margin: 20px 0 30px;
 
   padding: 7px 15px;
   border-radius: 15px;
-  text-shadow: 2px 2px 3px #9a7600;
+  text-shadow: 0px 0px 5px #ffffff;
 `;
 

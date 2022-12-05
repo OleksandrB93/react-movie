@@ -1,5 +1,6 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 export const Form = styled.form`
+
   display: flex;
   justify-content: center;
   padding-top: 100px;
@@ -11,6 +12,7 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
+
   width: 500px;
   border-radius: 25px;
   border: 3px solid #14c6b3;
@@ -30,11 +32,16 @@ export const Input = styled.input`
     border: 3px solid ${({ theme }) => theme.colors.clAccent};
     color: ${({ theme }) => theme.colors.clAccent};
   }
+  ::placeholder {
+    color: #00eeff8f;
+    text-decoration-line: underline;
+  }
 `;
 export const BtnContainer = styled.div`
   /* background-color: ${({ theme }) => theme.colors.bgPrimary}; */
 `;
 export const SearchIconBtn = styled.button`
+
   border: none;
   padding: 5px;
   cursor: pointer;
@@ -53,15 +60,13 @@ export const SkeltonBox = styled.div`
 `;
 
 export const BackgroundImgNoMovie = styled.div`
-  background-image:radial-gradient(circle, rgba(0,0,0,0) 0%, #003335cc 100%),
-  url(${props => props.movies.length === 0 ? ('https://www.pixelstalk.net/wp-content/uploads/images5/Cool-Batman-Wallpaper-Free-Download.jpg') : ('')});
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, #003335cc 100%),
+    url(${props => props.movies.length === 0? ('https://www.pixelstalk.net/wp-content/uploads/images5/Cool-Batman-Wallpaper-Free-Download.jpg') : ('')});
+
   width: 100%;
-  height:  ${props => props.movies.length ? ('100%') : ('100vh')};
+  height: ${props => (props.movies.length ? '100%' : '100vh')};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; 
-
-`
-
-// 
+  background-attachment: fixed;
+`;

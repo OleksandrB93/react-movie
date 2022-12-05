@@ -54,13 +54,14 @@ export default function Movie() {
     <BackgroundImgNoMovie movies={movies}>
       <Form action="" onSubmit={onFormSubmit}>
         <label htmlFor="">
-          <Input type="text" name="query" value={query} onChange={handleChange} />
-        </label>
+          <Input type="text" name="query" value={query} onChange={handleChange} 
+          placeholder='Please write a name movie'/>
         <SearchIconBtn type="submit">
           <BtnContainer>
             <FaSearch size={35} />
           </BtnContainer>
         </SearchIconBtn>
+        </label>
       </Form>
 
       {isLoading ? (
