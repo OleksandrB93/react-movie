@@ -11,15 +11,24 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-content: center;
-  padding-bottom: 10px;
+  padding-bottom: 7px;
 
   font-size: 25px;
   font-weight: 700;
-  backdrop-filter: blur(3px);
-  background-color: #0148583a;
+  /* backdrop-filter: blur(0px); */
+  background-color: ${props => (props.navbar ? '#00758f85' : '')};
   color: ${({ theme }) => theme.colors.clPrimary};
-  transition: height 300ms ease-in-out;
-  height: ${props => (props.navBar ? '50px' : '70px')};
+  transition: height 400ms ease-in;
+  height: ${props => (props.navbar ? '50px' : '70px')};
+  :after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    border-bottom: ${props => (props.navbar ? '4px solid #00cefc85' : '')};
+    transform: scaleX(1) ${props => (props.navbar ? 'scaleX(1)' : 'scaleX(0%)')};
+    transition: transform 400ms ease-in;
+  }
 `;
 
 export const HomeMovieBox = styled.div`
@@ -27,6 +36,7 @@ export const HomeMovieBox = styled.div`
   justify-content: center;
   align-items: center;
   margin-right: 20px;
+  margin-top: 4px;
 `;
 
 export const LogoLink = styled(NavLink)`
@@ -36,7 +46,9 @@ export const LogoLink = styled(NavLink)`
   font-size: 25px;
   font-weight: 700;
   padding: 15px 15px;
+  margin-top: 4px;
   margin-left: 30px;
+  cursor: pointer;
 
   border-radius: 15px;
   color: inherit;
@@ -60,7 +72,7 @@ export const PageLink = styled(NavLink)`
   text-decoration: none;
   font-size: 20px;
   font-weight: 700;
-  padding: ${props => (props.navBar ? '10px 18px' : '18px 18px')};
+  padding: ${props => (props.navbar ? '7px 18px' : '15px 18px')};
   margin-right: 20px;
 
   /* border: 1px solid black; */

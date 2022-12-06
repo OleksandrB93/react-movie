@@ -6,29 +6,37 @@ import {
 } from './HeaderNavigation.styled';
 import { GiFilmProjector } from 'react-icons/gi';
 import { useState } from 'react';
+import Switch from 'components/SwitcherTheme/Switch';
+import { SwitchContainer } from 'components/SwitcherTheme/SwitchTheme.styled';
 
 export const HeaderNavigation = () => {
-  const [navBar, setNavBar] = useState(false);
+  const [navbar, setNavBar] = useState(0);
+  const [theme, setTheme] = useState(0);
 
   const changeNavbar = () => {
-    if (window.scrollY >= 100) {
-      setNavBar(true);
+    if (window.scrollY >= 70) {
+      setNavBar(1);
     } else {
-      setNavBar(false);
+      setNavBar(0);
     }
   };
+
   window.addEventListener('scroll', changeNavbar);
   return (
-    <Nav navBar={navBar}>
+    <Nav navbar={navbar}>
       <LogoLink to="/">
         <GiFilmProjector />
         <p>Moviestate</p>
       </LogoLink>
+      <SwitchContainer>
+        <Switch 
+        />
+      </SwitchContainer>
       <HomeMovieBox>
-        <PageLink navBar={navBar} to="/">
+        <PageLink navbar={navbar} to="/">
           Home
         </PageLink>
-        <PageLink navBar={navBar} to="/movies">
+        <PageLink navbar={navbar} to="/movies">
           Movies
         </PageLink>
       </HomeMovieBox>

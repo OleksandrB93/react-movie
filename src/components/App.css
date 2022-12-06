@@ -1,5 +1,5 @@
 body {
-  background-color: #0e121a;
+
   margin-left: auto;
   margin-right: auto;
   overflow-y: scroll;
@@ -35,8 +35,3 @@ img {
 .skeletonSlide {
   margin: 4px;
 }
-
-/* .swiper-slide:hover + .swiper-slide{
-transform: scale(1.1);
-} */
-
