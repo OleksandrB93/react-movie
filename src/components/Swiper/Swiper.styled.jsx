@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export const SwiperContainer = styled.div`
   margin-top: 100px;
-  box-shadow: 0 0px 50px 10px #14c6b3;
+  box-shadow: 0 0px 50px 10px #158378ab;
   background-color: #013d37a2;
 `;
 
@@ -11,7 +11,7 @@ export const Slide = styled(NavLink)`
   margin: 0 10px;
   border-radius: 5px;
   width: 100%;
-  height: 100%;
+  height: auto;
 
   :hover p {
     opacity: 1;
@@ -23,10 +23,10 @@ export const SkeletonSlideContainer = styled.div`
 `;
 
 export const SlideImg = styled.img`
-  transition: transform 200ms ease-in-out;
+  transition: transform 250ms ease-in-out, box-shadow 250ms ease-in;
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   border-radius: 5px;
   box-shadow: rgba(255, 255, 255, 0.07) 0px 1px 2px,
