@@ -11,7 +11,6 @@ import { SwitchContainer } from 'components/SwitcherTheme/SwitchTheme.styled';
 
 export const HeaderNavigation = () => {
   const [navbar, setNavBar] = useState(0);
-  const [theme, setTheme] = useState(0);
 
   const changeNavbar = () => {
     if (window.scrollY >= 70) {
