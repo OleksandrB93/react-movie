@@ -11,6 +11,11 @@ export const Form = styled.form`
   }
 `;
 
+export const QueryLabel = styled.label`
+  display: flex;
+  align-content: center;
+`
+
 export const Input = styled.input`
 
   width: 500px;

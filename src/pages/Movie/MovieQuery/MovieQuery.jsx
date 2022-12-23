@@ -9,7 +9,8 @@ import {
   BtnContainer,
   SkeltonBox,
   BackgroundImgNoMovie,
-} from "./MovieQuery.styled";
+  QueryLabel,
+} from './MovieQuery.styled';
 import MovieGallery from "../MovieGallery/MovieGallery";
 import SkeletonHome from "components/Skeleton/Skeleton";
 import NoMovie from "./NoMovie/NoMovie";
@@ -53,7 +54,7 @@ export default function Movie() {
   return (
     <BackgroundImgNoMovie movies={movies}>
       <Form action="" onSubmit={onFormSubmit}>
-        <label htmlFor="">
+        <QueryLabel htmlFor="">
           <Input type="text" name="query" value={query} onChange={handleChange} 
           placeholder='Please write a name movie'/>
         <SearchIconBtn type="submit">
@@ -61,7 +62,7 @@ export default function Movie() {
             <FaSearch size={35} />
           </BtnContainer>
         </SearchIconBtn>
-        </label>
+        </QueryLabel>
       </Form>
 
       {isLoading ? (
