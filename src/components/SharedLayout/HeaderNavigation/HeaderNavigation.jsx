@@ -8,9 +8,13 @@ import { GiFilmProjector } from 'react-icons/gi';
 import { useState } from 'react';
 import Switch from 'components/SwitcherTheme/Switch';
 import { SwitchContainer } from 'components/SwitcherTheme/SwitchTheme.styled';
+// import { useDispatch, useSelector } from 'react-redux';
 
 export const HeaderNavigation = () => {
   const [navbar, setNavBar] = useState(0);
+
+  // const dispatch = useDispatch();
+  // const themeMode = useSelector();
 
   const changeNavbar = () => {
     if (window.scrollY >= 70) {
@@ -28,8 +32,10 @@ export const HeaderNavigation = () => {
         <p>Moviestate</p>
       </LogoLink>
       <SwitchContainer>
-        <Switch 
-        />
+        {/* <button type="button" onClick={dispatch()}>
+          btn
+        </button> */}
+        <Switch />
       </SwitchContainer>
       <HomeMovieBox>
         <PageLink navbar={navbar} to="/">
