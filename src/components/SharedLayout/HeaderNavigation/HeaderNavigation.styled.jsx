@@ -70,7 +70,7 @@ export const LogoLink = styled(NavLink)`
     box-shadow: ${({ theme }) => theme.boxsh.boxsh};
   }
   svg{
-    padding-bottom: 2px;
+    padding-bottom: 7px;
   }
 `;
 
