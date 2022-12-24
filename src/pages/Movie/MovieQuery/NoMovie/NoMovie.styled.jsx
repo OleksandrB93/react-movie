@@ -15,6 +15,6 @@ export const NoMovieContnet = styled.p`
 
   padding: 7px 15px;
   border-radius: 15px;
-  text-shadow: 0px 0px 5px #000000;
+  /* text-shadow: 0px 0px 5px #000000; */
 `;
 

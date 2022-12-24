@@ -20,7 +20,7 @@ export const Input = styled.input`
 
   width: 500px;
   border-radius: 25px;
-  border: 3px solid #14c6b3;
+  border: 3px solid ${({ theme }) => theme.colors.clPrimary};
   outline: none;
   padding: 10px;
   font-size: 18px;
@@ -38,7 +38,7 @@ export const Input = styled.input`
     color: ${({ theme }) => theme.colors.clAccent};
   }
   ::placeholder {
-    color: #00eeff8f;
+    color: ${({ theme }) => theme.colors.clPrimary};
     text-decoration-line: underline;
   }
 `;
@@ -65,8 +65,8 @@ export const SkeltonBox = styled.div`
 `;
 
 export const BackgroundImgNoMovie = styled.div`
-  background-image: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, #003335cc 100%),
-    url(${props => props.movies.length === 0? ('https://www.pixelstalk.net/wp-content/uploads/images5/Cool-Batman-Wallpaper-Free-Download.jpg') : ('')});
+  /* background-image: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, #003335cc 100%),
+    url(${props => props.movies.length === 0? ('https://www.pixelstalk.net/wp-content/uploads/images5/Cool-Batman-Wallpaper-Free-Download.jpg') : ('')}); */
 
   width: 100%;
   height: ${props => (props.movies.length ? '100%' : '100vh')};

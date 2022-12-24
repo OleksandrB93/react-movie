@@ -18,8 +18,10 @@ export const Nav = styled.nav`
   /* backdrop-filter: blur(0px); */
   background-color: ${props => (props.navbar ? '#00758f85' : '')};
   color: ${({ theme }) => theme.colors.clPrimary};
-  transition: height 400ms ease-in;
-  height: ${props => (props.navbar ? '50px' : '70px')};
+  transition: height 400ms ease-out;
+  height: ${props => (props.navbar ? '35px' : '70px')};
+  background-color: ${({ theme }) => theme.colors.bgPrimary};
+
   :after {
     content: '';
     width: 100%;
@@ -27,7 +29,7 @@ export const Nav = styled.nav`
     bottom: 0px;
     border-bottom: ${props => (props.navbar ? '4px solid #00cefc85' : '')};
     transform: scaleX(1) ${props => (props.navbar ? 'scaleX(1)' : 'scaleX(0%)')};
-    transition: transform 400ms ease-in;
+    transition: transform 250ms ease-out;
   }
 `;
 
@@ -42,6 +44,7 @@ export const HomeMovieBox = styled.div`
 export const LogoLink = styled(NavLink)`
   display: flex;
   align-items: center;
+  align-content: center;
   text-decoration: none;
   font-size: 25px;
   font-weight: 700;
@@ -52,8 +55,39 @@ export const LogoLink = styled(NavLink)`
 
   border-radius: 15px;
   color: inherit;
-  background-color: #0000006a;
+  background-color: ${({ theme }) => theme.colors.bgNav};
   transition: ${({ theme }) => theme.transition.tr};
+
+  &.active {
+    color: ${({ theme }) => theme.colors.clAccent};
+    box-shadow: ${({ theme }) => theme.boxsh.boxsh};
+  }
+
+  :hover:not(.active),
+  :focus-visible:not(.active) {
+    color: ${({ theme }) => theme.colors.clAccent};
+    transform: translateY(-2px);
+    box-shadow: ${({ theme }) => theme.boxsh.boxsh};
+  }
+  svg{
+    padding-bottom: 2px;
+  }
+`;
+
+
+export const PageLink = styled(NavLink)`
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  padding: ${props => (props.navbar ? '4px 18px' : '15px 18px')};
+  margin-right: 20px;
+
+  /* border: 1px solid black; */
+  border-radius: 15px;
+  color: inherit;
+  background-color: ${({ theme }) => theme.colors.bgNav};
+
+  transition: ${({ theme }) => theme.transition.tr}, padding 300ms ease-in-out;
 
   &.active {
     color: ${({ theme }) => theme.colors.clAccent};
@@ -68,28 +102,34 @@ export const LogoLink = styled(NavLink)`
   }
 `;
 
-export const PageLink = styled(NavLink)`
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 700;
-  padding: ${props => (props.navbar ? '7px 18px' : '15px 18px')};
-  margin-right: 20px;
+export const SwitsherTheme = styled.button`
+  width: 50px;
+  height: 23px;
+  margin-right: 15px;
 
-  /* border: 1px solid black; */
-  border-radius: 15px;
-  color: inherit;
-  background-color: #0000006a;
-  transition: ${({ theme }) => theme.transition.tr}, padding 300ms ease-in-out;
+  background: ${({ theme }) => theme.colors.gradient};
+  border: none;
+  /* border: 1px solid ${({ theme }) => theme.colors.clPrimary}; */
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+`;
 
-  &.active {
-    color: ${({ theme }) => theme.colors.clAccent};
-    box-shadow: ${({ theme }) => theme.boxsh.boxsh};
-  }
+export const SunIcon = styled.div`
+  transform: ${props =>
+    props.darkMode ? 'translateY(-700%)' : 'translateY(0%)'};
+  transition: transform 300ms ease-in-out;
+  display: flex;
+  align-items: center;
+`;
 
-  :hover:not(.active),
-  :focus-visible:not(.active) {
-    color: ${({ theme }) => theme.colors.clAccent};
-    transform: translateY(-2px);
-    box-shadow: ${({ theme }) => theme.boxsh.boxsh};
-  }
+export const MoonIcon = styled.div`
+  transform: ${props =>
+    props.darkMode ? 'translateY(0%)' : 'translateY(700%)'};
+  transition: transform 300ms ease-in-out;
+  display: flex;
+  align-items: center;
 `;

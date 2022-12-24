@@ -8,7 +8,7 @@ export const PlayBtn = styled.button`
   color: #ffffffd6;
   cursor: pointer;
 
-  transition: all 300ms ease-in-out;
+  transition: all 250ms ease-in-out;
   
   :hover {
     background-color: #ff0000;

@@ -19,7 +19,7 @@ export const MovieItem = styled.li`
   flex-direction: column;
   justify-content: center;
 
-  transition: box-shadow 200ms ease-in-out, transform 400ms ease-in-out;
+  transition: box-shadow 250ms ease-in-out, transform 400ms ease-in-out;
   box-shadow: ${({ theme }) => theme.boxsh.boxsh};
 
   :hover,

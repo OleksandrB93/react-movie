@@ -1,13 +1,13 @@
-export const theme = Object.freeze({
+export const lightMode = Object.freeze({
   colors: {
-    clPrimary: '#14C6B3',
-    bgPrimary: '#002628',
-    clAccent: '#ff7b1a',
-    bgNav: '#0000006a',
-    bgSwiper: '#06a3bf4f',
-    borderSwiper: '#14c6b3a3',
+    clPrimary: '#06a3bf',
+    bgPrimary: '#dfebec',
+    clAccent: '#d45d06',
+    bgNav: '#ffffff',
+    bgSwiper: '#75cff847',
+    borderSwiper: '#06a3bf8c',
     gradient:
-      'linear-gradient(180deg, rgba(0,69,150,1) 99%, rgba(95,235,251,1) 100%)',
+      'linear-gradient(180deg, rgba(0,69,150,1) 43%, rgba(0,183,255,1) 100%)',
   },
   boxsh: {
     boxsh: `rgba(255, 255, 255, 0.09) 0px 2px 1px,

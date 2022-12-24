@@ -3,20 +3,23 @@ import {
   HomeMovieBox,
   LogoLink,
   PageLink,
+  SwitsherTheme,
+  SunIcon,
+  MoonIcon,
 } from './HeaderNavigation.styled';
 import { GiFilmProjector } from 'react-icons/gi';
 import { useState } from 'react';
-import Switch from 'components/SwitcherTheme/Switch';
-import { SwitchContainer } from 'components/SwitcherTheme/SwitchTheme.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectDarkMode } from 'redux/selectors';
 import { toggleTheme } from 'redux/themeSlice';
+import { FaMoon } from 'react-icons/fa';
+import { RiSunFill } from 'react-icons/ri';
+import { selectDarkMode } from 'redux/selectors';
+
 export const HeaderNavigation = () => {
   const [navbar, setNavBar] = useState(0);
 
   const dispatch = useDispatch();
   const darkMode = useSelector(selectDarkMode);
-
   const changeNavbar = () => {
     if (window.scrollY >= 70) {
       setNavBar(1);
@@ -25,21 +28,22 @@ export const HeaderNavigation = () => {
     }
   };
 
-
   window.addEventListener('scroll', changeNavbar);
   return (
     <Nav navbar={navbar}>
       <LogoLink to="/">
-        <GiFilmProjector />
+          <GiFilmProjector />
         <p>Moviestate</p>
       </LogoLink>
-      <SwitchContainer>
-        <button type="button" onClick={() => dispatch(toggleTheme())}>
-          btn
-        </button>
-        <Switch />
-      </SwitchContainer>
       <HomeMovieBox>
+        <SwitsherTheme type="button" onClick={() => dispatch(toggleTheme())}>
+          <SunIcon darkMode={darkMode}>
+            <RiSunFill size={20} color={'#ffaa00'} />
+          </SunIcon>
+          <MoonIcon darkMode={darkMode}>
+            <FaMoon size={15} color={'#ffff89'} />
+          </MoonIcon>
+        </SwitsherTheme>
         <PageLink navbar={navbar} to="/">
           Home
         </PageLink>

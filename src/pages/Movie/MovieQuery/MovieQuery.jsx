@@ -17,7 +17,7 @@ import NoMovie from "./NoMovie/NoMovie";
 
 export default function Movie() {
   const [query, setQuery] = useState("");
-  const [movies, setMovies] = useState(0);
+  const [movies, setMovies] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
 

@@ -1,8 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from 'react-router-dom';
-import { ThemeProvider } from "@emotion/react";
-import { theme } from "./constants/theme";
 import "./index.css";
 import App from "./components/App";
 
@@ -14,9 +12,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter basename="/react-movie">
       <Provider store={store}>
-        <ThemeProvider theme={theme}>
           <App />
-        </ThemeProvider>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>

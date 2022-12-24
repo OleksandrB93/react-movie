@@ -2,9 +2,25 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const SwiperContainer = styled.div`
-  margin-top: 100px;
-  box-shadow: 0 0px 50px 10px #158378ab;
-  background-color: #013d37a2;
+  margin-top: 77px;
+  background-color: ${({ theme }) => theme.colors.bgSwiper};
+  position: relative;
+  :before {
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    border-bottom: 2px solid ${({ theme }) => theme.colors.borderSwiper};
+  }
+  :after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    border-bottom: 2px solid ${({ theme }) => theme.colors.borderSwiper};
+  }
 `;
 
 export const Slide = styled(NavLink)`
@@ -29,10 +45,6 @@ export const SlideImg = styled.img`
   height: 100%;
   object-fit: cover;
   border-radius: 5px;
-  box-shadow: rgba(255, 255, 255, 0.07) 0px 1px 2px,
-    rgba(255, 255, 255, 0.07) 0px 2px 4px, rgba(255, 255, 255, 0.07) 0px 4px 5px,
-    rgba(255, 255, 255, 0.07) 0px 8px 5px, rgba(0, 247, 255, 0.4) 0px 5px 5px,
-    rgba(255, 255, 255, 0.07) 0px 15px 5px;
 
   :hover {
     transform: translateY(-3px) scale(1.02);
@@ -43,6 +55,7 @@ export const SlideImg = styled.img`
       rgba(0, 247, 255, 0.867) 0px 0px 115px,
       rgba(255, 255, 255, 0.07) 0px 15px 30px;
   }
+
 `;
 
 export const SliderTitle = styled.p`
@@ -51,7 +64,7 @@ export const SliderTitle = styled.p`
   opacity: 0;
 
   position: absolute;
-  bottom: 18px;
+  bottom: 15px;
   left: 0;
 
   color: black;
