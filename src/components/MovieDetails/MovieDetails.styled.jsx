@@ -1,26 +1,37 @@
-import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
+import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const BackDiv = styled.div`
-  padding-left: 45px;
+  margin-left: 45px;
+
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 
   &.active {
     color: ${({ theme }) => theme.colors.clAccent};
-    box-shadow: ${({ theme }) => theme.boxsh.boxsh};
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   }
 
   :hover:not(.active),
   :focus-visible:not(.active) {
     color: ${({ theme }) => theme.colors.clAccent};
-    transform: translateY(-2px);
-    box-shadow: ${({ theme }) => theme.boxsh.boxsh};
+    /* transform: translateY(-1px); */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: box-shadow 250ms ease-out;
   }
 `;
 
 export const GoBack = styled(NavLink)`
+  position: absolute;
+  z-index: 200;
+  margin-top: 23px;
+  padding: 0;
   color: ${({ theme }) => theme.colors.clPrimary};
   border-radius: 10px;
-  transition: ${({ theme }) => theme.transition.tr};
+  
 `;
 
 export const MDetContainer = styled.div`
