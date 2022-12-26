@@ -4,7 +4,7 @@ import ContentLoader from "react-content-loader";
 const SkeletonSlide = (props) => (
   <div>
     <ContentLoader
-    className="skeletonSlide"
+    className="skeletonSlide swiper-slide "
       speed={1}
       width={159}
       height={225}

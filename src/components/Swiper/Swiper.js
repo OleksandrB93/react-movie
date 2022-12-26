@@ -4,20 +4,21 @@ import SwiperCore, {
   Autoplay,
   Virtual,
   Manipulation,
-} from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.min.css";
-import "swiper/swiper.min.css";
-import { URL_POSTER } from "constants/constants";
-import { useLocation } from "react-router-dom";
-import SkeletonSlide from "../Skeleton/SkeletonSlide";
+} from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper.min.css';
+import { URL_POSTER } from 'constants/constants';
+import { useLocation } from 'react-router-dom';
+import SkeletonSlide from '../Skeleton/SkeletonSlide';
 import {
   SwiperContainer,
   Slide,
-  SkeletonSlideContainer,
+  // SkeletonSlideContainer,
   SlideImg,
   SliderTitle,
-} from "./Swiper.styled";
+} from './Swiper.styled';
+
 
 SwiperCore.use([EffectCoverflow, Pagination, Autoplay, Manipulation, Virtual]);
 
@@ -29,7 +30,7 @@ export const SwiperHome = ({ isLoading, movies }) => {
       {
         <SwiperContainer>
           <Swiper
-            initialSlide={"3"}
+            initialSlide={'3'}
             spaceBetween={10}
             slidesPerView={8}
             grabCursor={true}
@@ -51,16 +52,12 @@ export const SwiperHome = ({ isLoading, movies }) => {
             // }}
             className="mySwiper"
           >
-            {isLoading ? (
-              <SkeletonSlideContainer>
-                {[...new Array(20)].map((_, index) => (
-                  <SkeletonSlide key={index} />
-                ))}
-              </SkeletonSlideContainer>
-            ) : (
-              movies.map(({ id, poster_path, title }) => (
-                <SwiperSlide key={id}>
-                  <Slide to={`/movies/${id}`} state={{ from: location }}>
+            {movies.map(({ id, poster_path, title }) => (
+              <SwiperSlide key={id}>
+                <Slide to={`/movies/${id}`} state={{ from: location }}>
+                  {isLoading ? (
+                    <SkeletonSlide />
+                  ) : (
                     <SlideImg
                       src={
                         poster_path ? `${URL_POSTER}${poster_path}` : `no image`
@@ -69,14 +66,21 @@ export const SwiperHome = ({ isLoading, movies }) => {
                       width={150}
                       height={225}
                     />
-                    <SliderTitle>{title}</SliderTitle>
-                  </Slide>
-                </SwiperSlide>
-              ))
-            )}
+                  )}
+                  <SliderTitle>{title}</SliderTitle>
+                </Slide>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </SwiperContainer>
       }
     </>
   );
 };
+// 1 ? (
+//   <SkeletonSlideContainer className="mySwiper">
+//     {[...new Array(20)].map((_, index) => (
+//       <SkeletonSlide key={index} />
+//     ))}
+//   </SkeletonSlideContainer>
+// ) :

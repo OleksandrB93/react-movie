@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const SwiperContainer = styled.div`
-  padding-top: 77px;
+
+  padding-top: 70px;
   background-color: ${({ theme }) => theme.colors.bgSwiper};
   position: relative;
   :before {
@@ -36,6 +37,7 @@ export const Slide = styled(NavLink)`
 `;
 export const SkeletonSlideContainer = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 export const SlideImg = styled.img`

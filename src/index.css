@@ -38,4 +38,7 @@ img {
 }
 .skeletonSlide {
   margin: 4px;
+  display: flex;
+  align-items: center;
+  
 }
