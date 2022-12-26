@@ -14,6 +14,7 @@ import { toggleTheme } from 'redux/themeSlice';
 import { FaMoon } from 'react-icons/fa';
 import { RiSunFill } from 'react-icons/ri';
 import { selectDarkMode } from 'redux/selectors';
+import { AuthProvider } from 'auth';
 
 export const HeaderNavigation = () => {
   const [navbar, setNavBar] = useState(0);
@@ -32,10 +33,13 @@ export const HeaderNavigation = () => {
   return (
     <Nav navbar={navbar}>
       <LogoLink to="/">
-          <GiFilmProjector />
+        <GiFilmProjector />
         <p>Moviestate</p>
       </LogoLink>
       <HomeMovieBox>
+        
+      <AuthProvider/>
+
         <SwitsherTheme type="button" onClick={() => dispatch(toggleTheme())}>
           <SunIcon darkMode={darkMode}>
             <RiSunFill size={20} color={'#ffaa00'} />

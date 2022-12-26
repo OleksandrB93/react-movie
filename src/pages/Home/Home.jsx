@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { fetchTrendMovie } from "api/api";
 import MovieGallery from "pages/Movie/MovieGallery/MovieGallery";
 import { HomeTitle } from "./Home.styled";
-
 import { SwiperHome } from "components/Swiper/Swiper";
 
 export default function Home() {
@@ -30,4 +29,5 @@ export default function Home() {
     </div>
   );
 }
+
 
