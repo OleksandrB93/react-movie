@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
 
-export const ReviewsList = styled.ul``;
+export const ReviewsList = styled.ul`
+`;
 
 export const ReviewsItem = styled.li`
   background-color: ${({ theme }) => theme.colors.bgPrimary};
-  color: #d4d4d4;
+  color: ${({ theme }) => theme.colors.clPrimary};
   margin: 20px;
   padding: 15px;
   border: 2px solid gray;
@@ -14,7 +15,7 @@ export const ReviewsItem = styled.li`
 
 export const AuthorP = styled.p`
   font-size: 20px;
-  color: ${({ theme }) => theme.colors.clPrimary};
+  color: ${({ theme }) => theme.colors.clAccent};
   margin-bottom: 10px;
 `;
 

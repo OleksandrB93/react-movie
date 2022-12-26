@@ -17,10 +17,11 @@ export const CastItem = styled.li`
 `;
 
 export const CastInfo = styled.div`
+margin: 0 auto;
   padding: 5px 8px;
-  color: black;
+  color: ${({theme})=>theme.colors.bgPrimary};
 `;
 
 export const CastImg= styled.img`
-  width: 200px;
+  width: 100%;
 `
