@@ -103,9 +103,9 @@ export const PageLink = styled(NavLink)`
 `;
 
 export const SwitsherTheme = styled.button`
-  width: 50px;
-  height: 23px;
-  margin-right: 15px;
+  max-width: 50px;
+  max-height: 23px;
+  margin: 0 15px;
 
   background: ${({ theme }) => theme.colors.gradient};
   border: none;
