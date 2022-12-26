@@ -53,6 +53,7 @@ export const NavlinkComtainer = styled.div`
 `;
 
 export const CastReviewsList = styled.ul`
+  padding-bottom: 15px;
   display: flex;
   justify-content: center;
 

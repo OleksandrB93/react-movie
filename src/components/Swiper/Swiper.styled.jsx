@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const SwiperContainer = styled.div`
-  margin-top: 77px;
+  padding-top: 77px;
   background-color: ${({ theme }) => theme.colors.bgSwiper};
   position: relative;
   :before {
@@ -10,7 +10,7 @@ export const SwiperContainer = styled.div`
     width: 100%;
     position: absolute;
     left: 0;
-    top: 0px;
+    top: 70px;
     border-bottom: 2px solid ${({ theme }) => theme.colors.borderSwiper};
   }
   :after {
