@@ -6,9 +6,10 @@ import { lazy } from 'react';
 import { ThemeProvider } from '@emotion/react';
 import { theme } from 'constants/theme';
 import { useSelector } from 'react-redux';
-import { selectDarkMode } from 'redux/selectors';
+import { selectDarkMode } from 'redux/themeMode/selectors';
 import { lightMode } from 'constants/lightMode';
 import { AppContainer } from './App.styled.jsx';
+import { RestrictedRoute } from './RestrictedRoute.js';
 
 const Home = lazy(() => import('pages/Home/Home'));
 //
@@ -30,8 +31,18 @@ const App = () => {
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<Home />} />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
+
+            <Route
+              path="/register"
+              element={
+                <RestrictedRoute redirectTo="/" component={<Register />} />
+              }
+            />
+            <Route
+              path="/login"
+              element={<RestrictedRoute redirectTo="/" component={<Login />} />}
+            />
+
             <Route path="movies" element={<Movie />} />
             <Route path="movies/:movieId" element={<MovieDetails />}>
               <Route path="cast" element={<MovieCast />} />

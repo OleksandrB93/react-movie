@@ -10,11 +10,11 @@ import {
 import { GiFilmProjector } from 'react-icons/gi';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleTheme } from 'redux/themeSlice';
+import { toggleTheme } from 'redux/themeMode/themeSlice';
 import { FaMoon } from 'react-icons/fa';
 import { RiSunFill } from 'react-icons/ri';
-import { selectDarkMode } from 'redux/selectors';
-import { AuthProvider } from 'auth';
+import { selectDarkMode } from 'redux/themeMode/selectors';
+import UserMenu from 'components/UserMenu/UserMenu';
 
 export const HeaderNavigation = () => {
   const [navbar, setNavBar] = useState(0);
@@ -37,8 +37,7 @@ export const HeaderNavigation = () => {
         <p>Moviestate</p>
       </LogoLink>
       <HomeMovieBox>
-        
-      <AuthProvider/>
+        <UserMenu />
 
         <SwitsherTheme type="button" onClick={() => dispatch(toggleTheme())}>
           <SunIcon darkMode={darkMode}>

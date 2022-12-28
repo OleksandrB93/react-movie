@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { fetchTrendMovie } from "api/api";
-import MovieGallery from "pages/Movie/MovieGallery/MovieGallery";
-import { HomeTitle } from "./Home.styled";
-import { SwiperHome } from "components/Swiper/Swiper";
+import React, { useState, useEffect } from 'react';
+import { fetchTrendMovie } from 'api/api';
+import MovieGallery from 'pages/Movie/MovieGallery/MovieGallery';
+import { HomeTitle } from './Home.styled';
+import { SwiperHome } from 'components/Swiper/Swiper';
 
 export default function Home() {
   const [trendMovie, setTrendMovie] = useState([]);
@@ -20,7 +20,7 @@ export default function Home() {
       }
     };
     renderTrendMovies();
-  }, []);
+  }, [setTrendMovie]);
   return (
     <div>
       <SwiperHome isLoading={isLoading} movies={trendMovie} />
@@ -29,5 +29,3 @@ export default function Home() {
     </div>
   );
 }
-
-
