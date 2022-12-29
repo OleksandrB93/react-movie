@@ -3,8 +3,7 @@ import styled from '@emotion/styled';
 export const UserBox = styled.div`
   display: flex;
   justify-content: center;
-  align-content: center;
-  align-items: center;
+  align-items: flex-start;
   button{
     background: transparent;
     border: none;

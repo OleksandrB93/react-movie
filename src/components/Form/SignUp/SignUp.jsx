@@ -4,13 +4,13 @@ import { Form } from 'components/Form/Form';
 import { setUser } from 'redux/user/userSlice';
 import { useNavigate } from 'react-router-dom';
 
-function SignUp() {
+function SignUp({toggle,setToggle}) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleRegister = (email, password) => {
     const auth = getAuth();
-    
+
     createUserWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         dispatch(
@@ -24,10 +24,16 @@ function SignUp() {
       })
       .catch(console.erorr);
   };
-
+  const titleForm = 'Register for free';
   return (
     <div>
-      <Form title="sign up" handleClick={handleRegister} />
+      <Form
+        title="sign up"
+        handleClick={handleRegister}
+        titleForm={titleForm}
+        toggle={toggle}
+        setToggle={setToggle}
+      />
     </div>
   );
 }

@@ -5,30 +5,26 @@ import { FiLogOut } from 'react-icons/fi';
 import { UserBox, UserData } from './UserMenu.styled';
 import { removeUer } from 'redux/user/userSlice';
 import { useDispatch } from 'react-redux';
-// import { HiOutlineLogin } from 'react-icons/hi';
 
 export default function UserMenu() {
-  const { isAuth,email } = useAuth();
+  const { isAuth, email } = useAuth();
   const dispatch = useDispatch();
 
   return (
     <UserBox>
       {isAuth ? (
-        <div>
+        <UserBox>
           <UserData>
-            <FaUserCircle />
+            <FaUserCircle size={28}/>
             <p>{email}</p>
           </UserData>
 
           <button type="button" onClick={() => dispatch(removeUer())}>
-            <FiLogOut size={25} />
+            <FiLogOut size={30} />
           </button>
-        </div>
+        </UserBox>
       ) : (
         ''
-        // <button>
-        //     <HiOutlineLogin size={25}/>
-        // </button>
       )}
     </UserBox>
   );

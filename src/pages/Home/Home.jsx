@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchTrendMovie } from 'api/api';
 import MovieGallery from 'pages/Movie/MovieGallery/MovieGallery';
-import { HomeTitle } from './Home.styled';
+import { HomeTitle, HomeContainer } from './Home.styled';
 import { SwiperHome } from 'components/Swiper/Swiper';
 
 export default function Home() {
@@ -20,12 +20,12 @@ export default function Home() {
       }
     };
     renderTrendMovies();
-  }, [setTrendMovie]);
+  }, []);
   return (
-    <div>
+    <HomeContainer >
       <SwiperHome isLoading={isLoading} movies={trendMovie} />
       <HomeTitle>Trending movies today:</HomeTitle>
-      {<MovieGallery isLoading={isLoading} movies={trendMovie} />}
-    </div>
+      <MovieGallery isLoading={isLoading} movies={trendMovie} />
+    </HomeContainer>
   );
 }

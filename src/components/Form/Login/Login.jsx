@@ -4,7 +4,7 @@ import { Form } from 'components/Form/Form';
 import { setUser } from 'redux/user/userSlice';
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({toggle,setToggle}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -22,11 +22,18 @@ const Login = () => {
         );
         navigate('/');
       })
-      .catch(()=>alert('Invalid user!'));
+      .catch(() => alert('Invalid user!'));
   };
+  const titleForm = 'User login';
   return (
     <div>
-      <Form title="sign in" handleClick={handleLogin} />
+      <Form
+        title="Log in"
+        handleClick={handleLogin}
+        titleForm={titleForm}
+        toggle={toggle}
+        setToggle={setToggle}
+      />
     </div>
   );
 };
