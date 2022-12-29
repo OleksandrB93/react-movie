@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export const SwiperContainer = styled.div`
 
-  padding-top: 70px;
+  padding-top: 80px;
   background-color: ${({ theme }) => theme.colors.bgSwiper};
   position: relative;
   :before {
@@ -11,7 +11,7 @@ export const SwiperContainer = styled.div`
     width: 100%;
     position: absolute;
     left: 0;
-    top: 70px;
+    top: 77px;
     border-bottom: 2px solid ${({ theme }) => theme.colors.borderSwiper};
   }
   :after {

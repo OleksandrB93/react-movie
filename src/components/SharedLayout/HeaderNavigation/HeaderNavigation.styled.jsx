@@ -69,11 +69,10 @@ export const LogoLink = styled(NavLink)`
     transform: translateY(-2px);
     box-shadow: ${({ theme }) => theme.boxsh.boxsh};
   }
-  svg{
+  svg {
     padding-bottom: 7px;
   }
 `;
-
 
 export const PageLink = styled(NavLink)`
   text-decoration: none;
