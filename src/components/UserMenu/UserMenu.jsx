@@ -15,12 +15,12 @@ export default function UserMenu() {
       {isAuth ? (
         <UserBox>
           <UserData>
-            <FaUserCircle size={28}/>
+            <FaUserCircle size={25}/>
             <p>{email}</p>
           </UserData>
 
           <button type="button" onClick={() => dispatch(removeUer())}>
-            <FiLogOut size={30} />
+            <FiLogOut size={28} />
           </button>
         </UserBox>
       ) : (
