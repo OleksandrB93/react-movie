@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import SwiperCore, {
   EffectCoverflow,
   Pagination,
@@ -19,22 +20,32 @@ import {
   SliderTitle,
 } from './Swiper.styled';
 
-
 SwiperCore.use([EffectCoverflow, Pagination, Autoplay, Manipulation, Virtual]);
 
 export const SwiperHome = ({ isLoading, movies }) => {
   const location = useLocation();
+
+  const listVAriatns = {
+    visible: i => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 0.05,
+      },
+    }),
+    hidden: { opacity: 0, x: 100 },
+  };
 
   return (
     <>
       {
         <SwiperContainer>
           <Swiper
-            initialSlide={'3'}
-            spaceBetween={10}
-            slidesPerView={8}
+            initialSlide={'1'}
+            spaceBetween={15}
+            slidesPerView={10}
             grabCursor={true}
-            centeredSlides={true}
+            centeredSlides={false}
             loop={true}
             autoplay={{
               delay: 1000,
@@ -52,23 +63,32 @@ export const SwiperHome = ({ isLoading, movies }) => {
             // }}
             className="mySwiper"
           >
-            {movies.map(({ id, poster_path, title }) => (
+            {movies.map(({ id, poster_path, title }, i) => (
               <SwiperSlide key={id}>
-                <Slide to={`/movies/${id}`} state={{ from: location }}>
-                  {isLoading ? (
-                    <SkeletonSlide />
-                  ) : (
-                    <SlideImg
-                      src={
-                        poster_path ? `${URL_POSTER}${poster_path}` : `no image`
-                      }
-                      alt={title}
-                      width={150}
-                      height={225}
-                    />
-                  )}
-                  <SliderTitle>{title}</SliderTitle>
-                </Slide>
+                <motion.div
+                  variants={listVAriatns}
+                  initial="hidden"
+                  animate="visible"
+                  custom={i}
+                >
+                  <Slide to={`/movies/${id}`} state={{ from: location }}>
+                    {isLoading ? (
+                      <SkeletonSlide />
+                    ) : (
+                      <SlideImg
+                        src={
+                          poster_path
+                            ? `${URL_POSTER}${poster_path}`
+                            : `no image`
+                        }
+                        alt={title}
+                        width={150}
+                        height={225}
+                      />
+                    )}
+                    <SliderTitle>{title}</SliderTitle>
+                  </Slide>
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>
