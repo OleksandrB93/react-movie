@@ -19,7 +19,7 @@ export const Nav = styled.nav`
   background-color: ${props => (props.navbar ? '#00758f85' : '')};
   color: ${({ theme }) => theme.colors.clPrimary};
   transition: height 400ms ease-out;
-  height: ${props => (props.navbar ? '35px' : '70px')};
+  height: ${props => (props.navbar ? '35px' : '58px')};
   background-color: ${({ theme }) => theme.colors.bgPrimary};
 
   :after {

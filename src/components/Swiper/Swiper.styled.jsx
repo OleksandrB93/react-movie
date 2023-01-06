@@ -11,7 +11,7 @@ export const SwiperContainer = styled.div`
     width: 100%;
     position: absolute;
     left: 0;
-    top: 77px;
+    top: 65px;
     border-bottom: 2px solid ${({ theme }) => theme.colors.borderSwiper};
   }
   :after {
