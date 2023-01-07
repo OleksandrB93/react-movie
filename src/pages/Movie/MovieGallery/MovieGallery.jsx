@@ -16,12 +16,12 @@ export default function MovieGallery({ movies, isLoading }) {
   const listVAriatns = {
     visible: i => ({
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
-        delay: i * 0.05,
+        delay: i * 0.1,
       },
     }),
-    hidden: { opacity: 0, x: 100 },
+    hidden: { opacity: 0, y: 100 },
   };
 
   return (
