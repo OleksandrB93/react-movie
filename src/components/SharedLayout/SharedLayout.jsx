@@ -1,23 +1,27 @@
 import { HeaderNavigation } from './HeaderNavigation/Desktop/HeaderNavigation';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { SharedLayoutBox,HeaderMobileContent } from './SharedLayout.styled';
+import { SharedLayoutBox, HeaderMobileContent } from './SharedLayout.styled';
 import { useMediaQuery } from 'react-responsive';
 import { MobileHeaderNavigation } from './HeaderNavigation/MobileAndLeptop/MobileHeaderNavigation';
 import Burger from './HeaderNavigation/MobileAndLeptop/Burger/Burger';
 import UserMenu from 'components/UserMenu/UserMenu';
 import SwitcherTheme from './SwitcherTheme/SwitcherTheme';
+import { selectIsSideBar } from 'redux/burger/selectors';
+import { useSelector } from 'react-redux';
 
 export const SharedLayout = () => {
   const isMobileAndLaptop = useMediaQuery({
     query: '(min-width: 768px)',
   });
+   
+  const isSideBar = useSelector(selectIsSideBar)
 
   return (
     <SharedLayoutBox>
       <HeaderMobileContent>
-        {isMobileAndLaptop || <Burger /> }
-        <SwitcherTheme/>
+        {isMobileAndLaptop || <Burger isSideBar={isSideBar} />}
+        <SwitcherTheme />
         <UserMenu />
       </HeaderMobileContent>
       <div>

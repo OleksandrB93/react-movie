@@ -2,14 +2,14 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const Nav = styled.nav`
-margin-top: 56px;
+  margin-top: 56px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 2000;
   height: 100vh;
   width: 100%;
 
@@ -23,7 +23,6 @@ margin-top: 56px;
   color: ${({ theme }) => theme.colors.clPrimary};
   transition: height 400ms ease-out;
   /* opacity: 1; */
-
 `;
 
 export const HomeMovieBox = styled.div`

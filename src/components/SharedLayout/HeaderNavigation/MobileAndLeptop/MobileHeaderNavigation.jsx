@@ -13,7 +13,6 @@ import { useSelector } from 'react-redux';
 export const MobileHeaderNavigation = () => {
   const [navbar, setNavBar] = useState(0);
 
-
   const isSideBar = useSelector(selectIsSideBar);
 
   const changeNavbar = () => {
@@ -29,8 +28,8 @@ export const MobileHeaderNavigation = () => {
     <div>
       {isSideBar && (
         <Nav navbar={navbar}>
+          <GiFilmProjector size={45} />
           <LogoLink to="/">
-            <GiFilmProjector />
             <p>Moviestate</p>
           </LogoLink>
           <HomeMovieBox>
