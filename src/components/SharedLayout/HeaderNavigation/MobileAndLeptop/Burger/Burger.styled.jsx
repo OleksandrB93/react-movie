@@ -27,7 +27,7 @@ export const BurgerIcon = styled.div`
   align-items: center;
   justify-content: center;
   transition: all 600ms ease-in-out;
-  transform: ${p=> p.isSideBar ? 'rotate(225deg)' : "rotate(0)"};
+  transform: ${p => (p.isSideBar ? 'rotate(225deg)' : 'rotate(0)')};
   span {
     position: absolute;
     display: block;

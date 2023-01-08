@@ -15,7 +15,6 @@ export const Nav = styled.nav`
 
   font-size: 25px;
   font-weight: 700;
-  /* backdrop-filter: blur(0px); */
   background-color: ${props => (props.navbar ? '#00758f85' : '')};
   color: ${({ theme }) => theme.colors.clPrimary};
   transition: height 400ms ease-out;
