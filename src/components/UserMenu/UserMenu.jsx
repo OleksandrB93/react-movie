@@ -10,13 +10,15 @@ export default function UserMenu() {
   const { isAuth, email } = useAuth();
   const dispatch = useDispatch();
 
+  const getNameEmail = email.split('@')[0]; 
+
   return (
     <UserBox>
       {isAuth ? (
         <UserBox>
           <UserData>
             <FaUserCircle size={25}/>
-            <p>{email}</p>
+            <p>{getNameEmail}</p>
           </UserData>
 
           <button type="button" onClick={() => dispatch(removeUer())}>

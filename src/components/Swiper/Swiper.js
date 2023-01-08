@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import { useMediaQuery } from 'react-responsive';
+
 import SwiperCore, {
   EffectCoverflow,
   Pagination,
@@ -23,6 +25,9 @@ import {
 SwiperCore.use([EffectCoverflow, Pagination, Autoplay, Manipulation, Virtual]);
 
 export const SwiperHome = ({ isLoading, movies }) => {
+  const isMobileAndLaptop = useMediaQuery({
+    query: '(min-width: 768px)',
+  });
   const location = useLocation();
 
   const listVAriatns = {
@@ -39,7 +44,7 @@ export const SwiperHome = ({ isLoading, movies }) => {
   return (
     <>
       {
-        <SwiperContainer>
+        <SwiperContainer isMobileAndLaptop={isMobileAndLaptop}>
           <Swiper
             initialSlide={'1'}
             spaceBetween={15}

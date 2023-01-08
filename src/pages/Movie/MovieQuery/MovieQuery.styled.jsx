@@ -18,7 +18,7 @@ export const QueryLabel = styled.label`
 
 export const Input = styled.input`
 
-  width: 500px;
+  width: 300px;
   border-radius: 25px;
   border: 3px solid ${({ theme }) => theme.colors.clPrimary};
   outline: none;

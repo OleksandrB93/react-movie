@@ -35,7 +35,7 @@ export const GoBack = styled(NavLink)`
 `;
 
 export const MDetContainer = styled.div`
-  padding-top: 76px;
+  padding-top: 5px;
 `;
 
 export const AdditionalInfo = styled.div`
