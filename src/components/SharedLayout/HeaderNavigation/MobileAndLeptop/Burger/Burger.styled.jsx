@@ -2,12 +2,12 @@ import styled from '@emotion/styled';
 
 export const BergerBox = styled.button`
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   margin-top: 3px;
   margin-left: 3px;
   margin-bottom: 6px;
-  background: #000000;
+  background-color: #013640;
   box-shadow: 0 0 5px ${({ theme }) => theme.colors.clPrimary},
     0 0 1px ${({ theme }) => theme.colors.clPrimary},
     0 0 2px ${({ theme }) => theme.colors.clPrimary},

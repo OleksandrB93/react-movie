@@ -2,6 +2,10 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const Nav = styled.nav`
+  position: fixed;
+
+  z-index: 1000;
+
   margin-top: 56px;
   display: flex;
   flex-direction: column;

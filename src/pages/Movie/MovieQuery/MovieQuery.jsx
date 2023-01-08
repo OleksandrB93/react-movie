@@ -59,7 +59,7 @@ export default function Movie() {
           placeholder='Please write a name movie'/>
         <SearchIconBtn type="submit">
           <BtnContainer>
-            <FaSearch size={35} />
+            <FaSearch size={30} />
           </BtnContainer>
         </SearchIconBtn>
         </QueryLabel>

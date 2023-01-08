@@ -18,7 +18,7 @@ export const SharedLayout = () => {
   const isSideBar = useSelector(selectIsSideBar)
 
   return (
-    <SharedLayoutBox>
+    <SharedLayoutBox isSideBar={isSideBar}>
       <HeaderMobileContent>
         {isMobileAndLaptop || <Burger isSideBar={isSideBar} />}
         <SwitcherTheme />
