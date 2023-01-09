@@ -18,7 +18,7 @@ export const FormContainer = styled.form`
   position: absolute;
   top: 50%;
   right: 50%;
-  transform: translate(50%, -50%);
+  transform: translate(50%, -60%);
 
   display: flex;
   flex-direction: column;
@@ -107,3 +107,13 @@ export const ToggleBtn = styled.button`
     box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
   }
 `;
+
+
+export const ShowPassword = styled.button`
+  position: absolute;
+  top: 15%;
+  right:10px;
+  background: transparent;
+  border: none;
+
+`

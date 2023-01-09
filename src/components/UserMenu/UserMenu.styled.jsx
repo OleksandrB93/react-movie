@@ -19,7 +19,6 @@ export const UserBox = styled.div`
 export const UserData = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
 
   text-decoration: none;
   font-size: 25px;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuth } from 'components/hooks/useAuth';
 import { FaUserCircle } from 'react-icons/fa';
-import { FiLogOut } from 'react-icons/fi';
+import { TbLogout } from 'react-icons/tb';
 import { UserBox, UserData } from './UserMenu.styled';
 import { removeUer } from 'redux/user/userSlice';
 import { useDispatch } from 'react-redux';
@@ -22,7 +22,7 @@ export default function UserMenu() {
           </UserData>
 
           <button type="button" onClick={() => dispatch(removeUer())}>
-            <FiLogOut size={28} />
+            <TbLogout size={30} />
           </button>
         </UserBox>
       ) : (

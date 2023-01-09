@@ -14,7 +14,7 @@ import {
   PlayBtnContainer,
   PosterandBtnContainer,
   LogoContainer,
-  LogoItem,
+  LogoItem,GenerContainer
 } from './MovieInfo.styled';
 
 export default function MovieInfo({ info }) {
@@ -55,7 +55,7 @@ export default function MovieInfo({ info }) {
           ))}
         </LogoContainer>
       </PosterandBtnContainer>
-      <div>
+      <GenerContainer>
         <Title>
           {original_title} ({getYear()})
         </Title>
@@ -66,7 +66,7 @@ export default function MovieInfo({ info }) {
         <GenresContent>
           {genres.map(genre => genre.name).join(', ')}
         </GenresContent>
-      </div>
+      </GenerContainer>
     </MovieInfoBox>
   );
 }

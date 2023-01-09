@@ -35,8 +35,9 @@ export const Title = styled.p`
   margin-right: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  backdrop-filter: invert(20%);
-  color: ${({ theme }) => theme.colors.clAccent};
+  backdrop-filter: invert(10%);
+  color: ${({ theme }) => theme.colors.movieTitle};
+
 `;
 
 export const Score = styled.p`
@@ -48,8 +49,7 @@ export const Score = styled.p`
   padding: 5px 20px;
   padding-bottom: 10px;
 
-  backdrop-filter: invert(20%);
-  color: #e3c373;
+  color: ${({ theme }) => theme.colors.clPrimary};
 `;
 
 export const OverviewTitle = styled.p`
@@ -61,7 +61,6 @@ export const OverviewTitle = styled.p`
   margin-right: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  backdrop-filter: invert(20%);
   color: ${({ theme }) => theme.colors.bgPrimary};
 `;
 
@@ -74,20 +73,18 @@ export const OverviewContent = styled.p`
   padding-left: 20px;
   padding-right: 20px;
 
-  backdrop-filter: invert(20%);
   color: ${({ theme }) => theme.colors.bgPrimary};
 `;
 
 export const GenresTitle = styled.p`
   font-size: 25px;
   font-weight: 700;
-  text-decoration-line: underline;
+  text-decoration-line: underline ;
 
   margin-left: 20px;
   margin-right: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  backdrop-filter: invert(20%);
   color: ${({ theme }) => theme.colors.bgPrimary};
 `;
 
@@ -99,7 +96,6 @@ export const GenresContent = styled.p`
   margin-right: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  backdrop-filter: invert(20%);
   color: ${({ theme }) => theme.colors.bgPrimary};
 `;
 
@@ -130,4 +126,12 @@ export const LogoItem = styled.div`
   padding: 5px 5px;
   display: flex;
   justify-content: center;
+`;
+
+export const GenerContainer = styled.div`
+  mix-blend-mode: hard-light;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3),
+    0px -2px 5px rgba(255, 255, 255, 0.3);
+  backdrop-filter: invert(10%);
+  letter-spacing: 0.5px;
 `;

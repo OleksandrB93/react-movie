@@ -7,6 +7,7 @@ export const theme = Object.freeze({
     bgSwiper: '#06a3bf4f',
     borderSwiper: '#14c6b3a3',
     buergerBack:"#013640",
+    movieTitle:'#00efef',
     gradient:
       'linear-gradient(180deg, rgba(0,69,150,1) 99%, rgba(95,235,251,1) 100%)',
   },
