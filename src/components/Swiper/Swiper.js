@@ -33,12 +33,12 @@ export const SwiperHome = ({ isLoading, movies }) => {
   const listVAriatns = {
     visible: i => ({
       opacity: 1,
-      y: 0,
+      x: 0,
       transition: {
         delay: i * 0.05,
       },
     }),
-    hidden: { opacity: 0, y: -100 },
+    hidden: { opacity: 0, x: -100 },
   };
 
   return (
