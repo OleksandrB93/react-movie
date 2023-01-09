@@ -7,7 +7,7 @@ export const BergerBox = styled.button`
   margin-top: 3px;
   margin-left: 3px;
   margin-bottom: 6px;
-  background-color: #013640;
+  background-color: ${({ theme }) => theme.colors.buergerBack};
   box-shadow: 0 0 5px ${({ theme }) => theme.colors.clPrimary},
     0 0 1px ${({ theme }) => theme.colors.clPrimary},
     0 0 2px ${({ theme }) => theme.colors.clPrimary},

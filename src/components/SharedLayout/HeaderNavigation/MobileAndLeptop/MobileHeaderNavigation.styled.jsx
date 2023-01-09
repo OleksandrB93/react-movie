@@ -3,18 +3,15 @@ import { NavLink } from 'react-router-dom';
 
 export const Nav = styled.nav`
   position: fixed;
-
-  z-index: 1000;
-
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  
   margin-top: 56px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2000;
-  height: 100vh;
+  height: ${props => (props.navbar ? '0' : '100vh')};
   width: 100%;
 
   padding-bottom: 7px;
@@ -26,17 +23,10 @@ export const Nav = styled.nav`
   background-color: ${({ theme }) => theme.colors.bgPrimary};
   color: ${({ theme }) => theme.colors.clPrimary};
   transition: height 400ms ease-out;
-  /* opacity: 1; */
 `;
 
-export const HomeMovieBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
 
-export const LogoLink = styled(NavLink)`
+export const PageLink = styled(NavLink)`
   width: 210px;
 
   display: flex;
@@ -69,36 +59,5 @@ export const LogoLink = styled(NavLink)`
   }
   svg {
     padding-bottom: 7px;
-  }
-`;
-
-export const PageLink = styled(NavLink)`
-  width: 210px;
-  display: flex;
-  justify-content: center;
-
-  padding: 15px 15px;
-  margin: 10px 5px;
-
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 700;
-
-  border-radius: 15px;
-  color: inherit;
-  background-color: ${({ theme }) => theme.colors.bgNav};
-
-  transition: ${({ theme }) => theme.transition.tr}, padding 300ms ease-in-out;
-
-  &.active {
-    color: ${({ theme }) => theme.colors.clAccent};
-    box-shadow: ${({ theme }) => theme.boxsh.boxsh};
-  }
-
-  :hover:not(.active),
-  :focus-visible:not(.active) {
-    color: ${({ theme }) => theme.colors.clAccent};
-    transform: translateY(-2px);
-    box-shadow: ${({ theme }) => theme.boxsh.boxsh};
   }
 `;

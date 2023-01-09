@@ -11,13 +11,12 @@ export const Form = styled.form`
 `;
 
 export const QueryLabel = styled.label`
+  position: relative;
   display: flex;
   align-content: center;
 `;
 
 export const Input = styled.input`
-  /* position: relative; */
-
   width: 300px;
   border-radius: 25px;
   border: 3px solid ${({ theme }) => theme.colors.clPrimary};
@@ -41,18 +40,27 @@ export const Input = styled.input`
     text-decoration-line: underline;
   }
 `;
-export const BtnContainer = styled.div`
-`;
+
 export const SearchIconBtn = styled.button`
-  /* position: absolute; */
-/* top: 0; */
-/* left: 0; */
+  position: absolute;
+  top: 10%;
+  right: 3%;
   border: none;
-  padding: 5px;
+  padding: 5px 5px;
   cursor: pointer;
 
   background-color: transparent;
   color: ${({ theme }) => theme.colors.clPrimary};
+
+  :before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 1px;
+    height: 100%;
+    background-color: ${({ theme }) => theme.colors.clPrimary};
+  }
 `;
 
 export const SkeltonBox = styled.div`

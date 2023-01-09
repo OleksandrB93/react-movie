@@ -6,7 +6,6 @@ import {
   SearchIconBtn,
   Input,
   Form,
-  BtnContainer,
   SkeltonBox,
   BackgroundImgNoMovie,
   QueryLabel,
@@ -58,9 +57,7 @@ export default function Movie() {
           <Input type="text" name="query" value={query} onChange={handleChange} 
           placeholder='Please write a name movie'/>
         <SearchIconBtn type="submit">
-          <BtnContainer>
-            <FaSearch size={30} />
-          </BtnContainer>
+            <FaSearch size={25} />
         </SearchIconBtn>
         </QueryLabel>
       </Form>

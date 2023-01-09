@@ -1,9 +1,5 @@
-import {
-  Nav,
-  HomeMovieBox,
-  LogoLink,
-  PageLink,
-} from './MobileHeaderNavigation.styled';
+import { motion } from 'framer-motion';
+import { Nav, PageLink } from './MobileHeaderNavigation.styled';
 import { GiFilmProjector } from 'react-icons/gi';
 import { useState } from 'react';
 
@@ -26,31 +22,65 @@ export const MobileHeaderNavigation = () => {
     }
   };
 
+  const listVAriatns = {
+    visible: i => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.15,
+      },
+    }),
+    hidden: { opacity: 0, y: 100 },
+  };
+
+  const menuObj = [
+    {
+      id: 1,
+      to: '/',
+      navbar: navbar,
+      onClick: toggleSideBar(),
+      contant: 'Moviestate',
+    },
+    {
+      id: 2,
+      to: '/',
+      navbar: navbar,
+      onClick: toggleSideBar(),
+      contant: 'Home',
+    },
+    {
+      id: 3,
+      to: '/movies',
+      navbar: navbar,
+      onClick: toggleSideBar(),
+      contant: 'Movies',
+    },
+  ];
+
   window.addEventListener('scroll', changeNavbar);
   return (
     <div>
       {isSideBar && (
         <Nav navbar={navbar}>
           <GiFilmProjector size={45} />
-          <LogoLink to="/" onClick={() => dispatch(toggleSideBar())}>
-            <p>Moviestate</p>
-          </LogoLink>
-          <HomeMovieBox>
-            <PageLink
-              navbar={navbar}
-              to="/"
-              onClick={() => dispatch(toggleSideBar())}
+          {menuObj.map(({ id, to, navbar, onClick, contant }, i) => (
+            <motion.div
+              key={id}
+              variants={listVAriatns}
+              initial="hidden"
+              animate="visible"
+              custom={i}
             >
-              Home
-            </PageLink>
-            <PageLink
-              navbar={navbar}
-              to="/movies"
-              onClick={() => dispatch(toggleSideBar())}
-            >
-              Movies
-            </PageLink>
-          </HomeMovieBox>
+              <PageLink
+                key={id}
+                to={to}
+                navbar={navbar}
+                onClick={() => dispatch(onClick)}
+              >
+                {contant}
+              </PageLink>
+            </motion.div>
+          ))}
         </Nav>
       )}
     </div>

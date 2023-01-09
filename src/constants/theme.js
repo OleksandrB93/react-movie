@@ -6,6 +6,7 @@ export const theme = Object.freeze({
     bgNav: '#0000006a',
     bgSwiper: '#06a3bf4f',
     borderSwiper: '#14c6b3a3',
+    buergerBack:"#013640",
     gradient:
       'linear-gradient(180deg, rgba(0,69,150,1) 99%, rgba(95,235,251,1) 100%)',
   },

@@ -6,6 +6,7 @@ export const lightMode = Object.freeze({
     bgNav: '#ffffff',
     bgSwiper: '#75cff847',
     borderSwiper: '#06a3bf8c',
+    buergerBack:"#75cff847",
     gradient:
       'linear-gradient(180deg, rgba(0,69,150,1) 43%, rgba(0,183,255,1) 100%)',
   },
