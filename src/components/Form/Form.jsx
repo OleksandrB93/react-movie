@@ -44,7 +44,8 @@ function Form({ setToggle, toggle, titleForm, title, handleClick }) {
             type="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
-            placeholder="email"
+            placeholder="email@gmail.com"
+            autocomplete="on"
           />
         </FormLabel>
         <FormLabel htmlFor="">
@@ -57,6 +58,7 @@ function Form({ setToggle, toggle, titleForm, title, handleClick }) {
             value={pass}
             onChange={e => setPass(e.target.value)}
             placeholder="password"
+            autocomplete="on"
             // pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
           />
 
