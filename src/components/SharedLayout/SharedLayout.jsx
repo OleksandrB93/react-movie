@@ -5,7 +5,7 @@ import { SharedLayoutBox, HeaderMobileContent } from './SharedLayout.styled';
 import { useMediaQuery } from 'react-responsive';
 import { MobileHeaderNavigation } from './HeaderNavigation/MobileAndLeptop/MobileHeaderNavigation';
 import Burger from './HeaderNavigation/MobileAndLeptop/Burger/Burger';
-import UserMenu from 'components/UserMenu/UserMenu';
+// import UserMenu from 'components/UserMenu/UserMenu';
 import SwitcherTheme from './SwitcherTheme/SwitcherTheme';
 import { selectIsSideBar } from 'redux/burger/selectors';
 import { useSelector } from 'react-redux';

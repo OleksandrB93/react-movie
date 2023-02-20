@@ -8,8 +8,8 @@ import { useSelector } from 'react-redux';
 import { selectDarkMode } from 'redux/themeMode/selectors';
 import { lightMode } from 'constants/lightMode';
 import { AppContainer } from './App.styled.jsx';
-import { useAuth } from './hooks/useAuth.js';
-import RgLogBox from './RegLogBox/RgLogBox.jsx';
+// import { useAuth } from './hooks/useAuth.js';
+// import RgLogBox from './RegLogBox/RgLogBox.jsx';
 
 const Home = lazy(() => import('pages/Home/Home'));
 const Movie = lazy(() => import('pages/Movie/MovieQuery/MovieQuery'));

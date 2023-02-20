@@ -14,7 +14,7 @@ import { toggleTheme } from 'redux/themeMode/themeSlice';
 import { FaMoon } from 'react-icons/fa';
 import { RiSunFill } from 'react-icons/ri';
 import { selectDarkMode } from 'redux/themeMode/selectors';
-import UserMenu from 'components/UserMenu/UserMenu';
+// import UserMenu from 'components/UserMenu/UserMenu';
 
 export const HeaderNavigation = () => {
   const [navbar, setNavBar] = useState(0);
