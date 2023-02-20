@@ -37,7 +37,7 @@ export const HeaderNavigation = () => {
         <p>Moviestate</p>
       </LogoLink>
       <HomeMovieBox>
-        <UserMenu />
+        {/* <UserMenu /> */}
         <SwitsherTheme type="button" onClick={() => dispatch(toggleTheme())}>
           <SunIcon darkMode={darkMode}>
             <RiSunFill size={20} color={'#ffaa00'} />

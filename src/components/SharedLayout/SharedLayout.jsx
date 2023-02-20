@@ -22,7 +22,7 @@ export const SharedLayout = () => {
       <HeaderMobileContent>
         {isMobileAndLaptop || <Burger isSideBar={isSideBar} />}
         <SwitcherTheme />
-        <UserMenu />
+        {/* <UserMenu /> */}
       </HeaderMobileContent>
       <div>
         {isMobileAndLaptop ? <HeaderNavigation /> : <MobileHeaderNavigation />}

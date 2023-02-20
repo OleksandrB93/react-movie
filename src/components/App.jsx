@@ -20,11 +20,11 @@ const MovieReviews = lazy(() =>
 );
 
 const App = () => {
-  const { isAuth } = useAuth();
+  // const { isAuth } = useAuth();
   const darkMode = useSelector(selectDarkMode);
   return (
     <ThemeProvider theme={darkMode ? theme : lightMode}>
-      {isAuth ? (
+      {/* {isAuth ? ( */}
         <AppContainer>
           <Routes>
             <Route path="/" element={<SharedLayout />}>
@@ -38,9 +38,9 @@ const App = () => {
             </Route>
           </Routes>
         </AppContainer>
-      ) : (
-        <RgLogBox />
-      )}
+      {/* ) : ( */}
+        {/* <RgLogBox /> */}
+      {/* )} */}
     </ThemeProvider>
   );
 };
