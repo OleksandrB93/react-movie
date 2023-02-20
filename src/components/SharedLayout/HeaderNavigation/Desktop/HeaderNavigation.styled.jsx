@@ -7,12 +7,10 @@ export const Nav = styled.nav`
   left: 0;
   z-index: 1000;
   width: 100%;
-
   display: flex;
   justify-content: space-between;
   align-content: center;
   padding-bottom: 7px;
-
   font-size: 25px;
   font-weight: 700;
   background-color: ${props => (props.navbar ? '#00758f85' : '')};
@@ -20,6 +18,16 @@ export const Nav = styled.nav`
   transition: height 400ms ease-out;
   height: ${props => (props.navbar ? '35px' : '58px')};
   background-color: ${({ theme }) => theme.colors.bgPrimary};
+  opacity: ${p=>p.navbar ? '0.85' : '1'};
+  :before{
+    content: '';
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    border-bottom: ${props => (props.navbar ? '' : '4px solid #00cefc85')};
+    transform: scaleX(1) ${props => (props.navbar ? 'scaleX(1)' : 'scaleX(0)')};
+    transition: transform 250ms ease-out;
+  }
 
   :after {
     content: '';

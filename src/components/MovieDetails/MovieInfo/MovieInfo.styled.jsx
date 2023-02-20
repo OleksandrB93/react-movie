@@ -22,6 +22,7 @@ export const MovieInfoBox = styled.div`
 `;
 
 export const Poster = styled.img`
+margin-top: ${p=>p.isMobileAndLaptop ? '40px' : ''};
   border-radius: 5px;
   margin-bottom: 20px;
   box-shadow: rgba(0, 0, 0, 0.72) 0px 5px 15px;
@@ -130,8 +131,6 @@ export const LogoItem = styled.div`
 
 export const GenerContainer = styled.div`
   mix-blend-mode: hard-light;
-  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3),
-    0px -2px 5px rgba(255, 255, 255, 0.3);
   backdrop-filter: invert(10%);
   letter-spacing: 0.5px;
 `;

@@ -1,9 +1,10 @@
-import React, { useEffect, useState, Suspense } from "react";
-import { useParams, useLocation, Outlet } from "react-router-dom";
-import { getMovieDetails } from "api/api";
-import { HiBackspace } from "react-icons/hi";
-import MovieInfo from "./MovieInfo/MovieInfo";
-import SkeletonInfo from "../Skeleton/SkeletonInfo";
+import React, { useEffect, useState, Suspense } from 'react';
+import { useParams, useLocation, Outlet } from 'react-router-dom';
+import { getMovieDetails } from 'api/api';
+import { HiBackspace } from 'react-icons/hi';
+import MovieInfo from './MovieInfo/MovieInfo';
+import SkeletonInfo from '../Skeleton/SkeletonInfo';
+import { useMediaQuery } from 'react-responsive';
 import {
   MDetContainer,
   AdditionalInfo,
@@ -12,13 +13,17 @@ import {
   NavlinkComtainer,
   GoBack,
   BackDiv,
-} from "./MovieDetails.styled";
+} from './MovieDetails.styled';
 
 export default function MoiveDetails() {
   const [movie, setMovie] = useState(0);
   const { movieId } = useParams();
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(false);
+
+  const isMobileAndLaptop = useMediaQuery({
+    query: '(min-width: 768px)',
+  });
 
   useEffect(() => {
     async function getMovieId() {
@@ -35,14 +40,14 @@ export default function MoiveDetails() {
     getMovieId();
   }, [movieId]);
 
-  const from = location.state?.from ?? "/";
+  const from = location.state?.from ?? '/';
 
   return (
     <>
       {movie && (
         <MDetContainer>
           <GoBack to={from}>
-            <BackDiv>
+            <BackDiv isMobileAndLaptop={isMobileAndLaptop}>
               <HiBackspace size={35} />
             </BackDiv>
           </GoBack>

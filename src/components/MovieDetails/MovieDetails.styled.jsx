@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export const BackDiv = styled.div`
   margin-left: 45px;
+  margin-top: ${p=>p.isMobileAndLaptop ? '40px' : '' };
 
   border-radius: 10px;
   display: flex;

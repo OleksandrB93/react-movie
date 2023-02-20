@@ -2,6 +2,8 @@ import React from 'react';
 import { URL_POSTER, LOGO_URL } from 'constants/constants';
 import Trailer from 'components/Trailer/Trailer';
 import { GiFilmSpool } from 'react-icons/gi';
+import { useMediaQuery } from 'react-responsive';
+
 import {
   MovieInfoBox,
   Poster,
@@ -14,7 +16,8 @@ import {
   PlayBtnContainer,
   PosterandBtnContainer,
   LogoContainer,
-  LogoItem,GenerContainer
+  LogoItem,
+  GenerContainer,
 } from './MovieInfo.styled';
 
 export default function MovieInfo({ info }) {
@@ -31,10 +34,15 @@ export default function MovieInfo({ info }) {
   const getYear = () => new Date(`${release_date}`).getFullYear();
   const getScore = () => Math.round(`${vote_average}` * 10);
 
+  const isMobileAndLaptop = useMediaQuery({
+    query: '(min-width: 768px)',
+  });
+
   return (
     <MovieInfoBox backdrop={info}>
       <PosterandBtnContainer>
         <Poster
+        isMobileAndLaptop={isMobileAndLaptop}
           src={poster_path ? `${URL_POSTER}${poster_path}` : 'no image'}
           alt={original_title}
           width="300"
