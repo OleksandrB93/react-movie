@@ -25,7 +25,7 @@ const App = () => {
   return (
     <ThemeProvider theme={darkMode ? theme : lightMode}>
       {/* {isAuth ? ( */}
-        <AppContainer>
+        <AppContainer className='body-container'>
           <Routes>
             <Route path="/" element={<SharedLayout />}>
               <Route index element={<Home />} />
